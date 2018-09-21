@@ -2,14 +2,17 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-''' Normalizes an array containing values between 0 and 255 to
-	be between -1 and 1'''
 def preprocess_image(image):
+	''' Normalizes an array containing values between 0 and 255 to
+		be between -1 and 1'''
 	scaling_factor = float(255) / 2
 	new_image = (image / scaling_factor) - 1
 	return new_image
 
+
 def postprocess_image(image):
+	''' Normalizes an array containing values between -1 and 1
+		to be between 0 and 255 '''
 	scaling_factor = float(255) / 2
 	new_image = (image + 1) * scaling_factor
 	return new_image

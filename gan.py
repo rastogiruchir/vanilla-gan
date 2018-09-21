@@ -147,8 +147,8 @@ class GANModel():
 			# train generator
 			for _ in range(1):
 				random_noise = self.generate_random_noise(minibatch_size)
-				_, G_loss, G_output, G1_weights, G2_weights = sess.run(
-										[self.G_optimizer, self.G_loss, self.G_output, self.G_W1, self.G_W2],
+				_, G_loss, G_output = sess.run(
+										[self.G_optimizer, self.G_loss, self.G_output,],
 										feed_dict={self.Z: random_noise}
 							   		  )
 
